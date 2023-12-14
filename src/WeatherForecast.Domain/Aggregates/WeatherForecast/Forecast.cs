@@ -4,17 +4,17 @@ using WeatherForecast.Domain.Common;
 
 namespace WeatherForecast.Domain.Aggregates.WeatherForecast
 {
-    internal class WeatherForecast : Entity, IAggregateRoot
+    public class Forecast : Entity, IAggregateRoot
     {
         public DateOnly Date { get; private set;}
         public int Temperature { get; private set; }
 
-        public WeatherForecast(DateOnly date, int temperature)
+        public Forecast(DateOnly date, int temperature)
         {
             SetDate(date);
             SetTemperature(temperature);
 
-            var weatherForecastCreatedEvent = new WeatherForecastCreatedEvent(Date, Temperature);
+            var weatherForecastCreatedEvent = new ForecastCreatedEvent(Date, Temperature);
             RegisterDomainEvent(weatherForecastCreatedEvent);
         }
 
