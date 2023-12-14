@@ -18,8 +18,4 @@
     <ProjectReference Include="..\WeatherForecast.Application\WeatherForecast.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Query\" />
-  </ItemGroup>
-
 </Project>

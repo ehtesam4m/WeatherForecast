@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace WeatherForecast.Application.Query.UseCases.GetForecastForWeek
 {
-    public record GetForecastForWeekResult(DateOnly Date, string WeatherCondition);
+    public record GetForecastForWeekQueryResult(DateOnly Date, string WeatherCondition);
  
 }
