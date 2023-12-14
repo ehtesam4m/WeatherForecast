@@ -1,13 +1,14 @@
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using WeatherForecast.Domain.Common;
 
 namespace WeatherForecast.Infrastracture;
 
-    public class Repository<T> : IRepository<T> where T : IAggregateRoot
+    public abstract class Repository<T> : IRepository<T> where T : class, IAggregateRoot
 {
     protected readonly DbSet<T> repoDbSet;
-    protected readonly DataBaseContext dbContext;
-    protected Repository(DataBaseContext databaseContext)
+    protected readonly AppDbContext dbContext;
+    protected Repository(AppDbContext databaseContext)
     {
         dbContext = databaseContext;
         repoDbSet = databaseContext.Set<T>();
@@ -23,11 +24,6 @@ namespace WeatherForecast.Infrastracture;
         repoDbSet.Update(entity);
 
         await Task.CompletedTask;
-    }
-
-    public async Task<T> GetAsync<TId>(TId id, CancellationToken cancellationToken = default)
-    {
-        return await repoDbSet.FindAsync(id);
     }
 
 }
