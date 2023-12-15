@@ -3,17 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.API", "src\WeatherForecast.API\WeatherForecast.API.csproj", "{86C48546-4451-473C-BF74-3D874BA8DE1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.API", "src\WeatherForecast.API\WeatherForecast.API.csproj", "{86C48546-4451-473C-BF74-3D874BA8DE1F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30292FBC-9B99-46F1-AF41-D04589E605DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3412FFF3-DC6B-41FA-A4E1-C002171A2875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Application", "src\WeatherForecast.Application\WeatherForecast.Application.csproj", "{3B4B7520-B7C1-4F12-9975-8B168B1A727A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Application", "src\WeatherForecast.Application\WeatherForecast.Application.csproj", "{3B4B7520-B7C1-4F12-9975-8B168B1A727A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Domain", "src\WeatherForecast.Domain\WeatherForecast.Domain.csproj", "{71C63626-CBD7-4B66-9EB5-C09B976AAB06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Domain", "src\WeatherForecast.Domain\WeatherForecast.Domain.csproj", "{71C63626-CBD7-4B66-9EB5-C09B976AAB06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Infrastracture", "src\WeatherForecast.Infrastracture\WeatherForecast.Infrastracture.csproj", "{4187F6BB-B7AE-4D7B-BF0E-102D4073FC56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Infrastracture", "src\WeatherForecast.Infrastracture\WeatherForecast.Infrastracture.csproj", "{4187F6BB-B7AE-4D7B-BF0E-102D4073FC56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{A98A4AEA-2E84-4FC9-BA7C-3E4A93C1258B}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

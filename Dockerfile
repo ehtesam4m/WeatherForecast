@@ -9,6 +9,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/WeatherForecast.API/WeatherForecast.API.csproj", "src/WeatherForecast.API/"]
+COPY ["src/WeatherForecast.Application/WeatherForecast.Application.csproj", "src/WeatherForecast.Application/"]
+COPY ["src/WeatherForecast.Infrastracture/WeatherForecast.Infrastracture.csproj", "src/WeatherForecast.Infrastracture/"]
+COPY ["src/WeatherForecast.Domain/WeatherForecast.Domain.csproj", "src/WeatherForecast.Domain/"]
+
 RUN dotnet restore "./src/WeatherForecast.API/./WeatherForecast.API.csproj"
 COPY . .
 WORKDIR "/src/src/WeatherForecast.API"

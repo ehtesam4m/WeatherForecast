@@ -5,7 +5,10 @@ using WeatherForecast.Domain.Aggregates.WeatherForecast;
 namespace WeatherForecast.Infrastracture;
 public class AppDbContext : DbContext
 {
-
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+    {
+    }
     public DbSet<Forecast> Forecasts => Set<Forecast>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
