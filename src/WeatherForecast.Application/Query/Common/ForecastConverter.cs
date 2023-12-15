@@ -18,7 +18,7 @@ namespace WeatherForecast.Application.Query.Common
             {"Balmy", (26, 30) },
             {"Hot", (31, 40) },
             {"Sweltering", (41, 45) },
-            {"Sweltering", (46, 60) },
+            {"Scorching", (46, 60) },
         };
 
         public static string GetWeatherCondition(int temperature)
@@ -26,7 +26,7 @@ namespace WeatherForecast.Application.Query.Common
             var weatherCondtion = string.Empty;
             foreach (KeyValuePair<string, (int, int)> entry in _weatherConditions)
             {
-                if (temperature >= entry.Value.Item1 && temperature <= entry.Value.Item1)
+                if (temperature >= entry.Value.Item1 && temperature <= entry.Value.Item2)
                 { 
                     weatherCondtion = entry.Key;
                     break;
