@@ -9,6 +9,7 @@ namespace WeatherForecast.Domain.Aggregates.Forecast
         public DateOnly Date { get; private set;}
         public int Temperature { get; private set; }
 
+        private Forecast() { }
         public Forecast(DateOnly date, int temperature)
         {
             SetDate(date);

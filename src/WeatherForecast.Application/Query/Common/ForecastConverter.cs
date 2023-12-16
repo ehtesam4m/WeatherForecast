@@ -23,7 +23,7 @@ namespace WeatherForecast.Application.Query.Common
 
         public static string GetWeatherCondition(int temperature)
         {
-            var weatherCondtion = string.Empty;
+            var weatherCondtion = "Unknown";
             foreach (KeyValuePair<string, (int, int)> entry in _weatherConditions)
             {
                 if (temperature >= entry.Value.Item1 && temperature <= entry.Value.Item2)

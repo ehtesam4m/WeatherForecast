@@ -51,7 +51,7 @@ namespace WeatherForecast.Application.Tests.Command
         }
 
         [Theory, CustomAutoData]
-        public async Task WhenDateAlreadyExists_Handler_ShouldReurnInvalidOperationException(CreateForecastCommand command)
+        public async Task WhenDateAlreadyExists_Handler_ShouldReurnInvalidOperationException(CreateForecastCommand command, Forecast forecastff)
         {
             _repository.Setup(x => x.GetForecastByDate(command.Date)).ReturnsAsync(new ForecastBuilder().Build());
             
