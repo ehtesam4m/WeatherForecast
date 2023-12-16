@@ -6,6 +6,7 @@ using WeatherForecast.Domain.Common;
 using FluentAssertions;
 using WeatherForecast.Tests.Common;
 using WeatherForecast.Tests.Common.Builders;
+using AutoFixture.Xunit2;
 
 
 namespace WeatherForecast.Application.Tests.Command
@@ -49,10 +50,9 @@ namespace WeatherForecast.Application.Tests.Command
             savedAggregate.Temperature.Should().Be(command.Temperature);
         }
 
-        [Fact]
-        public async Task WhenDateAlreadyExists_Handler_ShouldReurnInvalidOperationException()
+        [Theory, CustomAutoData]
+        public async Task WhenDateAlreadyExists_Handler_ShouldReurnInvalidOperationException(CreateForecastCommand command)
         {
-            var command = _fixture.Create<CreateForecastCommand>();
             _repository.Setup(x => x.GetForecastByDate(command.Date)).ReturnsAsync(new ForecastBuilder().Build());
             
             var sut = new CreateForecastCommandHandler(_repository.Object, _unitOfWork.Object);
