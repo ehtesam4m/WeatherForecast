@@ -1,6 +1,6 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using WeatherForecast.Domain.Aggregates.WeatherForecast;
+using WeatherForecast.Domain.Aggregates.Forecast;
 
 namespace WeatherForecast.Infrastracture;
 public class AppDbContext : DbContext

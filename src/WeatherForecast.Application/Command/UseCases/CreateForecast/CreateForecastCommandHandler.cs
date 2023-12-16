@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WeatherForecast.Domain.Aggregates.WeatherForecast;
+using WeatherForecast.Domain.Aggregates.Forecast;
 using WeatherForecast.Domain.Common;
 
 namespace WeatherForecast.Application.Command.UseCases.CreateForecast
@@ -17,7 +17,7 @@ namespace WeatherForecast.Application.Command.UseCases.CreateForecast
                 throw new InvalidOperationException("Forcast with this date already exists");
 
             var forecast = new Forecast(request.Date, request.Temperature);
-            await _repository.CreateAsync(forecast);
+            await _repository.CreateAsync(forecast, cancellationToken);
             await _unitOfWork.CompleteAsync();
         }
     }

@@ -8,7 +8,7 @@ namespace WeatherForecast.Application.Query.Common
 {
     public static class ForecastConverter
     {
-        private static IDictionary<string, (int, int)> _weatherConditions = new Dictionary<string, (int, int)>() {
+        private static readonly IDictionary<string, (int, int)> _weatherConditions = new Dictionary<string, (int, int)>() {
             {"Freezing", (-60, -10) },
             {"Bracing", (-9, 0) },
             {"Chilli", (1, 5) },

@@ -1,8 +1,8 @@
 ﻿using System.Reflection.Metadata.Ecma335;
-using WeatherForecast.Domain.Aggregates.WeatherForecast.Events;
+using WeatherForecast.Domain.Aggregates.Forecast.Events;
 using WeatherForecast.Domain.Common;
 
-namespace WeatherForecast.Domain.Aggregates.WeatherForecast
+namespace WeatherForecast.Domain.Aggregates.Forecast
 {
     public class Forecast : Entity, IAggregateRoot
     {

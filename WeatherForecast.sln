@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Application.Tests", "tests\WeatherForecast.Application.Tests\WeatherForecast.Application.Tests.csproj", "{900E7B37-03F1-4DA5-8397-B4F4517BACCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Tests.Common", "tests\WeatherForecast.Tests.Common\WeatherForecast.Tests.Common.csproj", "{4A8B716B-F117-47AC-81DD-DD9EA3E89414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +50,14 @@ Global
 		{4187F6BB-B7AE-4D7B-BF0E-102D4073FC56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4187F6BB-B7AE-4D7B-BF0E-102D4073FC56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4187F6BB-B7AE-4D7B-BF0E-102D4073FC56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900E7B37-03F1-4DA5-8397-B4F4517BACCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900E7B37-03F1-4DA5-8397-B4F4517BACCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900E7B37-03F1-4DA5-8397-B4F4517BACCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900E7B37-03F1-4DA5-8397-B4F4517BACCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A8B716B-F117-47AC-81DD-DD9EA3E89414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8B716B-F117-47AC-81DD-DD9EA3E89414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8B716B-F117-47AC-81DD-DD9EA3E89414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8B716B-F117-47AC-81DD-DD9EA3E89414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +67,8 @@ Global
 		{3B4B7520-B7C1-4F12-9975-8B168B1A727A} = {30292FBC-9B99-46F1-AF41-D04589E605DA}
 		{71C63626-CBD7-4B66-9EB5-C09B976AAB06} = {30292FBC-9B99-46F1-AF41-D04589E605DA}
 		{4187F6BB-B7AE-4D7B-BF0E-102D4073FC56} = {30292FBC-9B99-46F1-AF41-D04589E605DA}
+		{900E7B37-03F1-4DA5-8397-B4F4517BACCB} = {3412FFF3-DC6B-41FA-A4E1-C002171A2875}
+		{4A8B716B-F117-47AC-81DD-DD9EA3E89414} = {3412FFF3-DC6B-41FA-A4E1-C002171A2875}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B59A3BE4-2A80-4A3C-B3D9-6D890C2A04E4}

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WeatherForecast.Domain.Aggregates.WeatherForecast;
+using WeatherForecast.Domain.Aggregates.Forecast;
 
 namespace Project.Infrastructure.Mappings
 {

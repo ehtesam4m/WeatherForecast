@@ -1,5 +1,5 @@
 ﻿using WeatherForecast.Domain.Common;
-namespace WeatherForecast.Domain.Aggregates.WeatherForecast.Events;
+namespace WeatherForecast.Domain.Aggregates.Forecast.Events;
 
 public class ForecastCreatedEvent(DateOnly date, int temperature) : DomainEvent
 {
