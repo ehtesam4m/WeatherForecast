@@ -9,7 +9,7 @@ using WeatherForecast.Tests.Common.Builders;
 using AutoFixture.Xunit2;
 
 
-namespace WeatherForecast.Application.Tests.Command.CreateForecast
+namespace WeatherForecast.Application.Tests.Command.UseCases.CreateForecast
 {
     public class CreateForecastCommandHandlerTests
     {

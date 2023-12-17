@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WeatherForecast.Application.Query.UseCases.GetForecastForWeek;
 
-namespace WeatherForecast.Application.Tests.Query.GetForecastForWeek
+namespace WeatherForecast.Application.Tests.Query.UseCases.GetForecastForWeek
 {
     public class GetForecastForWeekQueryValidatorTests
     {

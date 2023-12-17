@@ -16,7 +16,7 @@ using WeatherForecast.Tests.Common;
 using WeatherForecast.Tests.Common.Builders;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace WeatherForecast.Application.Tests.Query.GetForecastForWeek
+namespace WeatherForecast.Application.Tests.Query.UseCases.GetForecastForWeek
 {
     public class GetForecastForWeekQueryHandlerTests
     {
