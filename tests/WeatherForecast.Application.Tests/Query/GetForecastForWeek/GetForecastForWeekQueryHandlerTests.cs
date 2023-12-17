@@ -16,7 +16,7 @@ using WeatherForecast.Tests.Common;
 using WeatherForecast.Tests.Common.Builders;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace WeatherForecast.Application.Tests.Query
+namespace WeatherForecast.Application.Tests.Query.GetForecastForWeek
 {
     public class GetForecastForWeekQueryHandlerTests
     {
@@ -39,7 +39,7 @@ namespace WeatherForecast.Application.Tests.Query
                         foreCasts2
                     }
                 );
-            
+
             var sut = new GetForecastForWeekQueryHandler(_repository.Object);
             var result = await sut.Handle(query, It.IsAny<CancellationToken>());
 

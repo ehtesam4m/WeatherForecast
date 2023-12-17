@@ -9,7 +9,7 @@ using WeatherForecast.Tests.Common.Builders;
 using AutoFixture.Xunit2;
 
 
-namespace WeatherForecast.Application.Tests.Command
+namespace WeatherForecast.Application.Tests.Command.CreateForecast
 {
     public class CreateForecastCommandHandlerTests
     {
@@ -35,22 +35,22 @@ namespace WeatherForecast.Application.Tests.Command
             var sut = new CreateForecastCommandHandler(_repository.Object, _unitOfWork.Object);
             await sut.Handle(command, It.IsAny<CancellationToken>());
 
-            _repository.Verify(x => x.CreateAsync(It.Is<Forecast>(x => x.Date == command.Date 
-            && x.Temperature == command.Temperature), 
+            _repository.Verify(x => x.CreateAsync(It.Is<Forecast>(x => x.Date == command.Date
+            && x.Temperature == command.Temperature),
             It.IsAny<CancellationToken>()), Times.Once);
 
             _unitOfWork.Verify(x => x.CompleteAsync(), Times.Once);
- 
+
         }
 
         [Theory, CustomAutoData]
         public async Task WhenDateAlreadyExists_Handler_ShouldReurnInvalidOperationException(CreateForecastCommand command)
         {
             _repository.Setup(x => x.GetForecastByDate(command.Date)).ReturnsAsync(new ForecastBuilder().Build());
-            
+
             var sut = new CreateForecastCommandHandler(_repository.Object, _unitOfWork.Object);
             var action = () => sut.Handle(command, It.IsAny<CancellationToken>());
-            
+
             await action.Should().ThrowAsync<InvalidOperationException>();
         }
     }
