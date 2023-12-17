@@ -1,11 +1,5 @@
 ﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WeatherForecast.Domain.Aggregates.Forecast;
-using WeatherForecast.Infrastracture.Command;
 using WeatherForecast.Infrastracture.Query;
 using WeatherForecast.Tests.Common.Builders;
 
