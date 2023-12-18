@@ -7,6 +7,7 @@ using FluentAssertions;
 using WeatherForecast.Tests.Common;
 using WeatherForecast.Tests.Common.Builders;
 using AutoFixture.Xunit2;
+using WeatherForecast.Application.Exceptions;
 
 
 namespace WeatherForecast.Application.Tests.Command.UseCases.CreateForecast
@@ -51,7 +52,7 @@ namespace WeatherForecast.Application.Tests.Command.UseCases.CreateForecast
             var sut = new CreateForecastCommandHandler(_repository.Object, _unitOfWork.Object);
             var action = () => sut.Handle(command, It.IsAny<CancellationToken>());
 
-            await action.Should().ThrowAsync<InvalidOperationException>();
+            await action.Should().ThrowAsync<EntityAlreadyExistsException>();
         }
     }
 }

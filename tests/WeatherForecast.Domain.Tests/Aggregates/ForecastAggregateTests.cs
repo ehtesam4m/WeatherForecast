@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WeatherForecast.Domain.Aggregates.Forecast;
 using WeatherForecast.Domain.Aggregates.Forecast.Events;
+using WeatherForecast.Domain.Common.Execptions;
 
 namespace WeatherForecast.Domain.Tests.Aggregates
 {
@@ -15,21 +16,21 @@ namespace WeatherForecast.Domain.Tests.Aggregates
         public void WhenDateIsInThePast_ForecastCreation_ShouldThrowException()
         {
             var action = () => { new Forecast(DateOnly.FromDateTime(DateTime.Now.AddDays(-2)), 50); };
-            action.Should().Throw<ArgumentException>();
+            action.Should().Throw<DomainValidationExeption>();
         }
 
         [Fact]
         public void WhenTemperatureLessThanMinus60_ForecastCreation_ShouldThrowException()
         {
             var action = () => { new Forecast(DateOnly.FromDateTime(DateTime.Now), -61); };
-            action.Should().Throw<ArgumentException>();
+            action.Should().Throw<DomainValidationExeption>();
         }
 
         [Fact]
         public void WhenTemperatureGreaterThan60_ForecastCreation_ShouldThrowException()
         {
             var action = () => { new Forecast(DateOnly.FromDateTime(DateTime.Now), 61); };
-            action.Should().Throw<ArgumentException>();
+            action.Should().Throw<DomainValidationExeption>();
         }
 
         [Fact]

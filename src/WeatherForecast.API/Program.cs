@@ -1,3 +1,4 @@
+using WeatherForecast.API.Filters;
 using WeatherForecast.Application.DependencyInjection;
 using WeatherForecast.Infrastracture;
 using WeatherForecast.Infrastracture.Common.DependencyInjection;
@@ -9,7 +10,8 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+                 options.Filters.Add<ApiExceptionFilterAttribute>());
 
 var app = builder.Build();
 

@@ -1,6 +1,7 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 using WeatherForecast.Domain.Aggregates.Forecast.Events;
 using WeatherForecast.Domain.Common;
+using WeatherForecast.Domain.Common.Execptions;
 
 namespace WeatherForecast.Domain.Aggregates.Forecast
 {
@@ -22,14 +23,14 @@ namespace WeatherForecast.Domain.Aggregates.Forecast
         private void SetDate(DateOnly date)
         {
             if (date < DateOnly.FromDateTime(DateTime.UtcNow))
-                throw new ArgumentException("Date can not be in the past");
+                throw new DomainValidationExeption("Date can not be in the past");
             Date = date;
         }
 
         private void SetTemperature(int temparature)
         {
             if (temparature < -60 || temparature > 60)
-                throw new ArgumentException("Temparature can not be less than -60 or greater than 60");
+                throw new DomainValidationExeption("Temparature can not be less than -60 or greater than 60");
             Temperature = temparature;
         }
     }
