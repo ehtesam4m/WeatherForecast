@@ -16,6 +16,7 @@ namespace WeatherForecast.Infrastracture.Common.DependencyInjection
             services.AddDbContext<AppDbContext>(o => o.UseSqlServer(configuration["ConnectionStrings:DB"]));
             services.AddScoped<IForecastRepository, ForecastRepository>();
             services.AddScoped<IForecastReadRepository, ForecastReadRepository>();
+            services.AddScoped<IEventSerializer, EventSerilizer>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

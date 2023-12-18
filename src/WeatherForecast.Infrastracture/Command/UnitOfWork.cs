@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 using WeatherForecast.Domain.Common;
 using WeatherForecast.Infrastracture;
+using System.Linq;
 
 namespace WeatherForecast.Infrastracture.Command
 {
@@ -9,26 +10,25 @@ namespace WeatherForecast.Infrastracture.Command
     {
         private readonly AppDbContext _appDbContext;
         private readonly ILogger<UnitOfWork> _logger;
+        private readonly IEventSerializer _eventSerializer;
 
-        public UnitOfWork(AppDbContext databaseContext, ILogger<UnitOfWork> logger)
+        public UnitOfWork(AppDbContext databaseContext, ILogger<UnitOfWork> logger, IEventSerializer eventSerializer)
         {
             _appDbContext = databaseContext;
             _logger = logger;
+            _eventSerializer = eventSerializer;
         }
 
         public async Task CompleteAsync()
         {
-            var entitiesWithEvents = _appDbContext.ChangeTracker.Entries<Entity>()
+            var domainEvents = _appDbContext.ChangeTracker.Entries<Entity>()
                 .Select(e => e.Entity)
                 .Where(e => e.DomainEvents.Any())
-                .ToArray();
+                .SelectMany(x => x.DomainEvents).ToList();
 
-            foreach (var entity in entitiesWithEvents)
+            foreach (var item in domainEvents)
             {
-                foreach (var item in entity.DomainEvents)
-                {
-                    _logger.LogInformation($"{item.GetType().Name} created at {item.DateOccurred}");
-                }
+                _logger.LogInformation($"{item.GetType().Name} created at {item.DateOccurred} with data: {_eventSerializer.Serialize(item)}");
             }
 
             await _appDbContext.SaveChangesAsync();
