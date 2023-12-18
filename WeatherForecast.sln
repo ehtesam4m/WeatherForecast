@@ -20,19 +20,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		.dockerignore = .dockerignore
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		Assignment.pdf = Assignment.pdf
 		docker-compose.yml = docker-compose.yml
 		Dockerfile = Dockerfile
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Application.Tests", "tests\WeatherForecast.Application.Tests\WeatherForecast.Application.Tests.csproj", "{900E7B37-03F1-4DA5-8397-B4F4517BACCB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Tests.Common", "tests\WeatherForecast.Tests.Common\WeatherForecast.Tests.Common.csproj", "{4A8B716B-F117-47AC-81DD-DD9EA3E89414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Domain.Tests", "tests\WeatherForecast.Domain.Tests\WeatherForecast.Domain.Tests.csproj", "{8736A69E-F270-42FF-98D6-638C4F295CE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Domain.Tests", "tests\WeatherForecast.Domain.Tests\WeatherForecast.Domain.Tests.csproj", "{8736A69E-F270-42FF-98D6-638C4F295CE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Infrastracture.Tests", "tests\WeatherForecast.Infrastracture.Tests\WeatherForecast.Infrastracture.Tests.csproj", "{17C347C4-F289-4C64-8458-9E213F15DAD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Infrastracture.Tests", "tests\WeatherForecast.Infrastracture.Tests\WeatherForecast.Infrastracture.Tests.csproj", "{17C347C4-F289-4C64-8458-9E213F15DAD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Integration.Tests", "WeatherForecast.Integration.Tests\WeatherForecast.Integration.Tests.csproj", "{EDB5896E-7D3A-4908-BB59-E10800A0BE44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Integration.Tests", "tests\WeatherForecast.Integration.Tests\WeatherForecast.Integration.Tests.csproj", "{EDB5896E-7D3A-4908-BB59-E10800A0BE44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

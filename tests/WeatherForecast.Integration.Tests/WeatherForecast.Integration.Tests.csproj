@@ -31,8 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\WeatherForecast.API\WeatherForecast.API.csproj" />
-    <ProjectReference Include="..\tests\WeatherForecast.Tests.Common\WeatherForecast.Tests.Common.csproj" />
+    <ProjectReference Include="..\..\src\WeatherForecast.API\WeatherForecast.API.csproj" />
+    <ProjectReference Include="..\WeatherForecast.Tests.Common\WeatherForecast.Tests.Common.csproj" />
   </ItemGroup>
 
 </Project>
