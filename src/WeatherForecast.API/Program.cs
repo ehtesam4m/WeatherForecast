@@ -45,3 +45,7 @@ static void SeedDatabase(WebApplication app)
         logger.LogError(ex, "An error occurred seeding the DB. {exceptionMessage}", ex.Message);
     }
 }
+
+public partial class Program
+{
+}

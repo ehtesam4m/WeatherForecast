@@ -20,7 +20,7 @@ namespace WeatherForecast.API.Command
         public async Task<IActionResult> Create(CreateForecastCommand command)
         {
             await _mediator.Send(command);
-            return Created();
+            return NoContent();
         }
     }
 }

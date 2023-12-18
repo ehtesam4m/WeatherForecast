@@ -10,7 +10,7 @@ namespace WeatherForecast.Application.DependencyInjection
         public static IServiceCollection AddMediatRDependencies(this IServiceCollection services, Assembly assembly)
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assembly));
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
             return services;
         }
     }
