@@ -7,8 +7,7 @@ namespace WeatherForecast.Application.DependencyInjection
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            services.AddMediatRDependencies(assembly);
+            services.AddMediatRDependencies();
             return services;
         }
     }

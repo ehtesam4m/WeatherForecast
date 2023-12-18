@@ -7,6 +7,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using WeatherForecast.Application.Command.UseCases.CreateForecast;
+using WeatherForecast.Infrastracture;
+using WeatherForecast.Tests.Common.Builders;
 
 namespace WeatherForecast.Integration.Tests.Command
 {
@@ -21,6 +23,24 @@ namespace WeatherForecast.Integration.Tests.Command
                 );
 
             response.StatusCode.Should().Be(HttpStatusCode.NoContent);
+        }
+
+        [Fact]
+        public async Task WhenDateAreadyExists_CreatingForecast_ShouldReturn409Conflict()
+        {
+            var forecast = new ForecastBuilder().WithDate(DateOnly.FromDateTime(DateTime.Now)).WithTemperature(40).Build();
+
+            using (var dbContext = new AppDbContext(_testDb.ContextOptions))
+            {
+                await dbContext.AddAsync(forecast);
+                await dbContext.SaveChangesAsync();
+            }
+            var response = await _client.PostAsync("/forecast",
+                new StringContent(JsonConvert.SerializeObject(new CreateForecastCommand(forecast.Date, 10)),
+                Encoding.UTF8, "application/json")
+                );
+
+            response.StatusCode.Should().Be(HttpStatusCode.Conflict);
         }
     }
 }
