@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WeatherForecast.Domain.Aggregates.Forecast;
+﻿using WeatherForecast.Domain.Aggregates.Forecast;
 
 namespace WeatherForecast.Application.Query.Common
 {

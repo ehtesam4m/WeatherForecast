@@ -1,8 +1,5 @@
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 using WeatherForecast.Domain.Common;
-using WeatherForecast.Infrastracture;
-using System.Linq;
 
 namespace WeatherForecast.Infrastracture.Command
 {
@@ -32,8 +29,6 @@ namespace WeatherForecast.Infrastracture.Command
             }
 
             await _appDbContext.SaveChangesAsync();
-
-
         }
     }
 }

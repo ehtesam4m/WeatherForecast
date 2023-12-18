@@ -1,10 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.TestHost;
-using Moq;
-using System.Net;
-using Moq.Protected;
-using Microsoft.Extensions.Configuration;
 using WeatherForecast.Infrastracture;
 using Microsoft.AspNetCore.Hosting;
 
@@ -26,19 +22,7 @@ namespace WeatherForecast.Integration.Tests
 
                 _ = builder.ConfigureTestServices(services =>
                 {
-                    var handlerMock = new Mock<HttpMessageHandler>();
-                    var response = new HttpResponseMessage
-                    {
-                        StatusCode = HttpStatusCode.OK
-                    };
-                    handlerMock.Protected().Setup<Task<HttpResponseMessage>>(
-                  "SendAsync",
-                  ItExpr.IsAny<HttpRequestMessage>(),
-                  ItExpr.IsAny<CancellationToken>())
-               .ReturnsAsync(response);
-
                     services.AddScoped(_ => new AppDbContext(_testDb.ContextOptions));
-
                 });
             });
             _client = _factory.CreateClient();

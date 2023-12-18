@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using WeatherForecast.Domain.Aggregates.Forecast.Events;
+﻿using WeatherForecast.Domain.Aggregates.Forecast.Events;
 using WeatherForecast.Domain.Common;
 using WeatherForecast.Domain.Common.Execptions;
 

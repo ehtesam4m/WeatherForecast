@@ -6,7 +6,6 @@ using WeatherForecast.Domain.Common;
 using FluentAssertions;
 using WeatherForecast.Tests.Common;
 using WeatherForecast.Tests.Common.Builders;
-using AutoFixture.Xunit2;
 using WeatherForecast.Application.Exceptions;
 
 

@@ -1,10 +1,4 @@
-﻿using FluentAssertions.Extensions;
-using FluentValidation.TestHelper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation.TestHelper;
 using WeatherForecast.Application.Query.UseCases.GetForecastForWeek;
 
 namespace WeatherForecast.Application.Tests.Query.UseCases.GetForecastForWeek

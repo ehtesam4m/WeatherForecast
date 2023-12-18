@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 using WeatherForecast.Domain.Common;
 
 namespace WeatherForecast.Infrastracture.Command;

@@ -1,5 +1,4 @@
 using Newtonsoft.Json;
-using System.Xml;
 using WeatherForecast.Domain.Common;
 
 namespace WeatherForecast.Infrastracture
