@@ -8,9 +8,10 @@
 - Domain driven design
 - CQRS - Command and Query are separated in every layer. 
 - MediatR - to separate command/query handling responsibilities
-- Fluent Validation -  for validationg with MediatR pipeline
+- Fluent Validation -  for validating command/query with MediatR pipeline
 - Exception filter - to return correct exception to client
-- SQL server - in docker compose
+- Entity Framework Core - as ORM
+- SQL server - as Database
 - In memory SQL Lite - for integration testing
 - Xunit - as test framework
 - AutoFixture - for mocking data
