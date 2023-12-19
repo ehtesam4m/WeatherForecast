@@ -9,7 +9,7 @@ public abstract class HasDomainEvents
   public IEnumerable<DomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 
   protected void RegisterDomainEvent(DomainEvent domainEvent) => _domainEvents.Add(domainEvent);
-  internal void ClearDomainEvents() => _domainEvents.Clear();
+  protected void ClearDomainEvents() => _domainEvents.Clear();
 
 }
 
