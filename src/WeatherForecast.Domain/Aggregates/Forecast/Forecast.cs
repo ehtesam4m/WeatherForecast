@@ -1,36 +1,24 @@
 ﻿using WeatherForecast.Domain.Aggregates.Forecast.Events;
+using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
 using WeatherForecast.Domain.Common;
 using WeatherForecast.Domain.Common.Execptions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WeatherForecast.Domain.Aggregates.Forecast
 {
     public class Forecast : Entity, IAggregateRoot
     {
-        public DateOnly Date { get; private set;}
-        public int Temperature { get; private set; }
+        public ForecastDate Date { get; private set;}
+        public ForecastTemperature Temperature { get; private set; }
 
         private Forecast() { }
-        public Forecast(DateOnly date, int temperature)
+        public Forecast(ForecastDate date, ForecastTemperature temperature)
         {
-            SetDate(date);
-            SetTemperature(temperature);
-
-            var weatherForecastCreatedEvent = new ForecastCreatedEvent(Date, Temperature);
-            RegisterDomainEvent(weatherForecastCreatedEvent);
-        }
-
-        private void SetDate(DateOnly date)
-        {
-            if (date < DateOnly.FromDateTime(DateTime.UtcNow))
-                throw new DomainValidationExeption("Date can not be in the past");
             Date = date;
-        }
+            Temperature = temperature;
 
-        private void SetTemperature(int temparature)
-        {
-            if (temparature < -60 || temparature > 60)
-                throw new DomainValidationExeption("Temparature can not be less than -60 or greater than 60");
-            Temperature = temparature;
+            var weatherForecastCreatedEvent = new ForecastCreatedEvent(Date.Date, Temperature.Temperature);
+            RegisterDomainEvent(weatherForecastCreatedEvent);
         }
     }
 }

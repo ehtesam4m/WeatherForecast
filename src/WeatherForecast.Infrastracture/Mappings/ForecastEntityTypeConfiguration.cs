@@ -10,9 +10,15 @@ namespace Project.Infrastructure.Mappings
         {
             builder.ToTable("Forecasts").HasKey(o => o.Id);
             builder.Property(o => o.Id).UseIdentityColumn();
-            builder.Property(e => e.Date).IsRequired();
-            builder.Property(e => e.Temperature).IsRequired();
-            builder.HasIndex(o => o.Date).IsUnique();
+            builder.OwnsOne(e => e.Date, cb =>
+            {
+                cb.Property(x => x.Date).HasColumnName("Test_date").IsRequired();
+            });
+            builder.OwnsOne(e => e.Temperature, cb =>
+            {
+                cb.Property(x => x.Temperature).HasColumnName("Test_Temp").IsRequired();
+            });
+            builder.HasIndex(o => o.Date.Date).IsUnique();
         }
     }
 }
