@@ -20,7 +20,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		.dockerignore = .dockerignore
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		Assignment.pdf = Assignment.pdf
 		docker-compose.yml = docker-compose.yml
 		Dockerfile = Dockerfile
 		README.md = README.md
@@ -35,6 +34,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Infrastracture.Tests", "tests\WeatherForecast.Infrastracture.Tests\WeatherForecast.Infrastracture.Tests.csproj", "{17C347C4-F289-4C64-8458-9E213F15DAD5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.Integration.Tests", "tests\WeatherForecast.Integration.Tests\WeatherForecast.Integration.Tests.csproj", "{EDB5896E-7D3A-4908-BB59-E10800A0BE44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.API.Tests", "tests\WeatherForecast.API.Tests\WeatherForecast.API.Tests.csproj", "{D32F9ABC-0DB2-426F-9286-8699D7FEB242}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +79,10 @@ Global
 		{EDB5896E-7D3A-4908-BB59-E10800A0BE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDB5896E-7D3A-4908-BB59-E10800A0BE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDB5896E-7D3A-4908-BB59-E10800A0BE44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D32F9ABC-0DB2-426F-9286-8699D7FEB242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D32F9ABC-0DB2-426F-9286-8699D7FEB242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D32F9ABC-0DB2-426F-9286-8699D7FEB242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D32F9ABC-0DB2-426F-9286-8699D7FEB242}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +97,7 @@ Global
 		{8736A69E-F270-42FF-98D6-638C4F295CE2} = {3412FFF3-DC6B-41FA-A4E1-C002171A2875}
 		{17C347C4-F289-4C64-8458-9E213F15DAD5} = {3412FFF3-DC6B-41FA-A4E1-C002171A2875}
 		{EDB5896E-7D3A-4908-BB59-E10800A0BE44} = {3412FFF3-DC6B-41FA-A4E1-C002171A2875}
+		{D32F9ABC-0DB2-426F-9286-8699D7FEB242} = {3412FFF3-DC6B-41FA-A4E1-C002171A2875}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B59A3BE4-2A80-4A3C-B3D9-6D890C2A04E4}
