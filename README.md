@@ -1,15 +1,15 @@
-#Problem Description
+# Problem Description
 - Store weather forecast for a day.
 - Retrieve the weather forecast for a week in a human readable way (like "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching").
 - Forecasts cannot be in the past.
 - Temperature cannot be more than +60 and cannot be less than -60 degrees.
 
-#Build and Run
+# Build and Run
 - To build the application "docker compose build"
 - To run the application "docker compose up"
 - Try the application at http://localhost:8080/swagger/
 
-#Architecture and Tools
+# Architecture and Tools
 - Clean architecture - for project layering
 - Domain driven design
 - CQRS - Command and Query are separated in every layer. 
