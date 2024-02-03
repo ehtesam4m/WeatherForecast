@@ -1,5 +1,8 @@
 ﻿using FluentAssertions;
 using System.Net;
+using WeatherForecast.Domain.Aggregates.Forecast;
+using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+using WeatherForecast.Domain.Common.Extensions;
 using WeatherForecast.Infrastracture;
 using WeatherForecast.Tests.Common.Builders;
 
@@ -10,8 +13,13 @@ namespace WeatherForecast.Integration.Tests.Query
         [Fact]
         public async Task WhenQueryIsValid_GettingForecastForWeek_ShouldReturn200OKResult()
         {
-            var forecast1 = new ForecastBuilder().WithDate(DateOnly.FromDateTime(DateTime.Now)).WithTemperature(40).Build();
-            var forecast2 = new ForecastBuilder().WithDate(DateOnly.FromDateTime(DateTime.Now.AddDays(2))).WithTemperature(50).Build();
+            var forecast1 = new ForecastBuilder()
+                                .WithDate( new ForecastDate(DateHelper.Today))
+                                .WithTemperature(new ForecastTemperature(40))
+                                .Build();
+            var forecast2 = new ForecastBuilder()
+                                .WithDate(new ForecastDate(DateHelper.Tomorrow))
+                                .WithTemperature(new ForecastTemperature(50)     ).Build();
 
             using (var dbContext = new AppDbContext(_testDb.ContextOptions))
             {
@@ -19,7 +27,7 @@ namespace WeatherForecast.Integration.Tests.Query
                 await dbContext.SaveChangesAsync();
             }
 
-            var response = await _client.GetAsync($"/forecast?startDate={forecast1.Date.ToString("yyyy-MM-dd")}");
+            var response = await _client.GetAsync($"/forecast?startDate={forecast1.Date.Value.ToString("yyyy-MM-dd")}");
 
             response.StatusCode.Should().Be(HttpStatusCode.OK);
         }

@@ -12,13 +12,13 @@ namespace Project.Infrastructure.Mappings
             builder.Property(o => o.Id).UseIdentityColumn();
             builder.OwnsOne(e => e.Date, cb =>
             {
-                cb.Property(x => x.Date).HasColumnName("Test_date").IsRequired();
+                cb.Property(x => x.Value).HasColumnName("ForecastDate").IsRequired();
+                cb.HasIndex(x => x.Value).IsUnique();
             });
             builder.OwnsOne(e => e.Temperature, cb =>
             {
-                cb.Property(x => x.Temperature).HasColumnName("Test_Temp").IsRequired();
+                cb.Property(x => x.Value).HasColumnName("ForecastTemperature").IsRequired();
             });
-            builder.HasIndex(o => o.Date.Date).IsUnique();
         }
     }
 }

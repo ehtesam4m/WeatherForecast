@@ -17,7 +17,7 @@ namespace WeatherForecast.Domain.Aggregates.Forecast
             Date = date;
             Temperature = temperature;
 
-            var weatherForecastCreatedEvent = new ForecastCreatedEvent(Date.Date, Temperature.Temperature);
+            var weatherForecastCreatedEvent = new ForecastCreatedEvent(Date.Value, Temperature.Value);
             RegisterDomainEvent(weatherForecastCreatedEvent);
         }
     }

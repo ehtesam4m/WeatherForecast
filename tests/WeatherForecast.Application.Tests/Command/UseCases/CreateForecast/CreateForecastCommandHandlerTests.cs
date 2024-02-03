@@ -7,6 +7,8 @@ using FluentAssertions;
 using WeatherForecast.Tests.Common;
 using WeatherForecast.Tests.Common.Builders;
 using WeatherForecast.Application.Exceptions;
+using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+using WeatherForecast.Domain.Common.Extensions;
 
 
 namespace WeatherForecast.Application.Tests.Command.UseCases.CreateForecast
@@ -28,15 +30,17 @@ namespace WeatherForecast.Application.Tests.Command.UseCases.CreateForecast
         public async Task WhenCommandIsValid_Handler_ShouldCreateCorrectForecast()
         {
             var command = _fixture.Build<CreateForecastCommand>()
-                            .With(x => x.Date, DateOnly.FromDateTime(DateTime.Now))
+                            .With(x => x.Date, DateHelper.Today)
                             .With(x => x.Temperature, 5)
                             .Create();
+            var mockForecastDate = new ForecastDate(command.Date);
+            var mockForecastTemperature = new ForecastTemperature(command.Temperature);
 
             var sut = new CreateForecastCommandHandler(_repository.Object, _unitOfWork.Object);
             await sut.Handle(command, It.IsAny<CancellationToken>());
 
-            _repository.Verify(x => x.CreateAsync(It.Is<Forecast>(x => x.Date == command.Date
-            && x.Temperature == command.Temperature),
+            _repository.Verify(x => x.CreateAsync(It.Is<Forecast>(x => x.Date.Equals(mockForecastDate)
+            && x.Temperature.Equals(mockForecastTemperature)),
             It.IsAny<CancellationToken>()), Times.Once);
 
             _unitOfWork.Verify(x => x.CompleteAsync(), Times.Once);

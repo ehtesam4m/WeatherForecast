@@ -7,7 +7,7 @@ namespace WeatherForecast.Infrastracture.Command
     {
         public async Task<Forecast> GetForecastByDate(DateOnly date)
         {
-            return await repoDbSet.Where(x => x.Date == date).FirstOrDefaultAsync();
+            return await repoDbSet.Where(x => x.Date.Value == date).FirstOrDefaultAsync();
         }
     }
 }

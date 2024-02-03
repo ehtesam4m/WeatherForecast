@@ -1,21 +1,22 @@
 ﻿using WeatherForecast.Domain.Common;
 using WeatherForecast.Domain.Common.Execptions;
+using WeatherForecast.Domain.Common.Extensions;
 
 namespace WeatherForecast.Domain.Aggregates.Forecast.ValueObjects
 {
     public class ForecastDate : ValueObject<ForecastDate>
     {
-        public DateOnly Date { get; private set; }
+        public DateOnly Value { get; private set; }
         private ForecastDate() { }
 
         public ForecastDate(DateOnly date) {
-            if (date < DateOnly.FromDateTime(DateTime.UtcNow))
+            if (date < DateHelper.Today)
                 throw new DomainValidationExeption("Date can not be in the past");
-            Date = date;
+            Value = date;
         }
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            yield return Date;
+            yield return Value;
         }
     }
 }
