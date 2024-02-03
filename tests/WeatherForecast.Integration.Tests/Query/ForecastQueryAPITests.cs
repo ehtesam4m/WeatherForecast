@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using System.Net;
-using WeatherForecast.Domain.Aggregates.Forecast;
-using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
 using WeatherForecast.Domain.Common.Extensions;
 using WeatherForecast.Infrastracture;
 using WeatherForecast.Tests.Common.Builders;

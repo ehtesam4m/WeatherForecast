@@ -1,7 +1,7 @@
 ﻿using WeatherForecast.Domain.Common;
 using WeatherForecast.Domain.Common.Execptions;
 
-namespace WeatherForecast.Domain.Aggregates.Forecast.ValueObjects
+namespace WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects
 {
     public class ForecastTemperature: ValueObject<ForecastTemperature>
     {

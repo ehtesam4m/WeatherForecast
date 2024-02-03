@@ -2,11 +2,11 @@
 using Moq;
 using WeatherForecast.Application.Query.Common;
 using WeatherForecast.Application.Query.UseCases.GetForecastForWeek;
-using WeatherForecast.Domain.Aggregates.Forecast;
 using WeatherForecast.Tests.Common;
 using WeatherForecast.Tests.Common.Builders;
-using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
 using WeatherForecast.Domain.Common.Extensions;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
 
 namespace WeatherForecast.Application.Tests.Query.UseCases.GetForecastForWeek
 {

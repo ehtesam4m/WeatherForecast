@@ -2,7 +2,7 @@
 using WeatherForecast.Domain.Common.Execptions;
 using WeatherForecast.Domain.Common.Extensions;
 
-namespace WeatherForecast.Domain.Aggregates.Forecast.ValueObjects
+namespace WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects
 {
     public class ForecastDate : ValueObject<ForecastDate>
     {

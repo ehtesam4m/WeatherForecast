@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WeatherForecast.Domain.Aggregates.Forecast;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
 
 namespace WeatherForecast.Infrastracture.Command
 {

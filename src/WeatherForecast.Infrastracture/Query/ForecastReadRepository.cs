@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WeatherForecast.Application.Query.Common;
-using WeatherForecast.Domain.Aggregates.Forecast;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
 
 namespace WeatherForecast.Infrastracture.Query
 {

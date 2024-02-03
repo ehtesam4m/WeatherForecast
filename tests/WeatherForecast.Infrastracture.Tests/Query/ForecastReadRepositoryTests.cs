@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
-using WeatherForecast.Domain.Aggregates.Forecast;
-using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
 using WeatherForecast.Domain.Common.Extensions;
 using WeatherForecast.Infrastracture.Query;
 using WeatherForecast.Tests.Common.Builders;

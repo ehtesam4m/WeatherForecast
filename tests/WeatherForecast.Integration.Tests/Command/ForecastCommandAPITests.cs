@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Text;
 using WeatherForecast.Application.Command.UseCases.CreateForecast;
-using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
 using WeatherForecast.Domain.Common.Extensions;
 using WeatherForecast.Infrastracture;
 using WeatherForecast.Tests.Common.Builders;

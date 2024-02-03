@@ -1,14 +1,14 @@
-﻿using WeatherForecast.Domain.Aggregates.Forecast.Events;
-using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+﻿using WeatherForecast.Domain.Aggregates.ForecastAggregate.DomainEvents;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
 using WeatherForecast.Domain.Common;
 using WeatherForecast.Domain.Common.Execptions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace WeatherForecast.Domain.Aggregates.Forecast
+namespace WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot
 {
     public class Forecast : Entity, IAggregateRoot
     {
-        public ForecastDate Date { get; private set;}
+        public ForecastDate Date { get; private set; }
         public ForecastTemperature Temperature { get; private set; }
 
         private Forecast() { }

@@ -1,5 +1,5 @@
-﻿using WeatherForecast.Domain.Aggregates.Forecast;
-using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+﻿using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
 using WeatherForecast.Domain.Common.Extensions;
 
 namespace WeatherForecast.Tests.Common.Builders

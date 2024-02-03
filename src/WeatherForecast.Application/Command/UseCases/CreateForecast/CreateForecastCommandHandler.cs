@@ -1,12 +1,8 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WeatherForecast.Application.Exceptions;
-using WeatherForecast.Domain.Aggregates.Forecast;
-using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
 using WeatherForecast.Domain.Common;
 
 namespace WeatherForecast.Application.Command.UseCases.CreateForecast

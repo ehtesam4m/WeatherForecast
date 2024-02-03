@@ -1,14 +1,15 @@
 ﻿using AutoFixture;
 using Moq;
 using WeatherForecast.Application.Command.UseCases.CreateForecast;
-using WeatherForecast.Domain.Aggregates.Forecast;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate;
 using WeatherForecast.Domain.Common;
 using FluentAssertions;
 using WeatherForecast.Tests.Common;
 using WeatherForecast.Tests.Common.Builders;
 using WeatherForecast.Application.Exceptions;
-using WeatherForecast.Domain.Aggregates.Forecast.ValueObjects;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
 using WeatherForecast.Domain.Common.Extensions;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
 
 
 namespace WeatherForecast.Application.Tests.Command.UseCases.CreateForecast

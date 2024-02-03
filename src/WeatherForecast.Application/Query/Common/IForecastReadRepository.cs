@@ -1,4 +1,4 @@
-﻿using WeatherForecast.Domain.Aggregates.Forecast;
+﻿using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
 
 namespace WeatherForecast.Application.Query.Common
 {
