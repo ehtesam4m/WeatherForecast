@@ -1,24 +1,26 @@
-﻿using WeatherForecast.Domain.Aggregates.Forecast;
+﻿using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
+using WeatherForecast.Domain.Common.Extensions;
 
 namespace WeatherForecast.Tests.Common.Builders
 {
     public class ForecastBuilder
     {
-        private DateOnly _date = DateOnly.FromDateTime(DateTime.Now);
-        private int _temperature = 5;
+        private ForecastDate _forecastDate = new ForecastDate(DateHelper.Today);
+        private ForecastTemperature _forecasttemperature = new ForecastTemperature(5);
 
-        public ForecastBuilder WithDate(DateOnly value) {
-            _date = value;
+        public ForecastBuilder WithDate(ForecastDate value) {
+            _forecastDate = value;
             return this;
         }
-        public ForecastBuilder WithTemperature(int value)
+        public ForecastBuilder WithTemperature(ForecastTemperature value)
         {
-            _temperature = value;
+            _forecasttemperature = value;
             return this;
         }
 
         public Forecast Build() {
-            return new Forecast(_date, _temperature);
+            return new Forecast(_forecastDate, _forecasttemperature);
         }
     }
 }

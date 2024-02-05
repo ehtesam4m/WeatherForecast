@@ -1,5 +1,7 @@
 ﻿using FluentAssertions;
-using WeatherForecast.Domain.Aggregates.Forecast;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.ValueObjects;
+using WeatherForecast.Domain.Common.Extensions;
 using WeatherForecast.Infrastracture.Query;
 using WeatherForecast.Tests.Common.Builders;
 
@@ -14,9 +16,18 @@ namespace WeatherForecast.Infrastracture.Tests.Query
         [Fact]
         public async Task WhenForecastPresentInDB_FetchingForecastForWeek_ShouldReturnCorrectForecasts()
         {
-            var forecast1 = new ForecastBuilder().WithDate(DateOnly.FromDateTime(DateTime.Now)).WithTemperature(40).Build();
-            var forecast2 = new ForecastBuilder().WithDate(DateOnly.FromDateTime(DateTime.Now.AddDays(2))).WithTemperature(50).Build();
-            var forecast3 = new ForecastBuilder().WithDate(DateOnly.FromDateTime(DateTime.Now.AddMonths(1))).WithTemperature(60).Build();
+            var forecast1 = new ForecastBuilder()
+                               .WithDate(new ForecastDate(DateHelper.Today))
+                               .WithTemperature(new ForecastTemperature(40))
+                               .Build();
+            var forecast2 = new ForecastBuilder()
+                                .WithDate(new ForecastDate(DateHelper.Tomorrow))
+                                .WithTemperature(new ForecastTemperature(50))
+                                .Build();
+            var forecast3 = new ForecastBuilder()
+                                .WithDate(new ForecastDate(DateOnly.FromDateTime(DateTime.Now.AddMonths(1))))
+                                .WithTemperature(new ForecastTemperature(60))
+                                .Build();
 
             using (var dbContext = new AppDbContext(_testDb.ContextOptions))
             {
@@ -27,7 +38,7 @@ namespace WeatherForecast.Infrastracture.Tests.Query
             using (var dbContext = new AppDbContext(_testDb.ContextOptions))
             {
                 var forecastRepository = new ForecastReadRepository(dbContext);
-                var result = await forecastRepository.GetForecastForWeek(DateOnly.FromDateTime(DateTime.Now).AddDays(-1));
+                var result = await forecastRepository.GetForecastForWeek(DateHelper.Yesterday);
 
                 result.Count().Should().Be(2);
 

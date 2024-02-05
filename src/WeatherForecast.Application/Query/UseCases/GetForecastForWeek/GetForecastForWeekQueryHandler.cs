@@ -9,8 +9,8 @@ namespace WeatherForecast.Application.Query.UseCases.GetForecastForWeek
         {
             var forecasts = await _forecastReadRepository.GetForecastForWeek(request.StartDate);
 
-            return forecasts.Select(x => new GetForecastForWeekQueryResult(x.Date, 
-                ForecastConverter.GetWeatherCondition(x.Temperature))).ToList();
+            return forecasts.Select(x => new GetForecastForWeekQueryResult(x.Date.Value, 
+                ForecastConverter.GetWeatherCondition(x.Temperature.Value))).ToList();
         }
     }
 }

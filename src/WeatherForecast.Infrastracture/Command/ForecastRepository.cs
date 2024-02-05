@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WeatherForecast.Domain.Aggregates.Forecast;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate;
+using WeatherForecast.Domain.Aggregates.ForecastAggregate.AggregateRoot;
 
 namespace WeatherForecast.Infrastracture.Command
 {
@@ -7,7 +8,7 @@ namespace WeatherForecast.Infrastracture.Command
     {
         public async Task<Forecast> GetForecastByDate(DateOnly date)
         {
-            return await repoDbSet.Where(x => x.Date == date).FirstOrDefaultAsync();
+            return await repoDbSet.Where(x => x.Date.Value == date).FirstOrDefaultAsync();
         }
     }
 }

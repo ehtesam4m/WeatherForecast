@@ -25,7 +25,7 @@ namespace WeatherForecast.Infrastracture.Tests.Command
             using (var dbContext = new AppDbContext(_testDb.ContextOptions))
             {
                 var forecastRepository = new ForecastRepository(dbContext);
-                var result = await forecastRepository.GetForecastByDate(forecast.Date);
+                var result = await forecastRepository.GetForecastByDate(forecast.Date.Value);
 
                 result.Date.Should().Be(forecast.Date);
                 result.Temperature.Should().Be(forecast.Temperature);

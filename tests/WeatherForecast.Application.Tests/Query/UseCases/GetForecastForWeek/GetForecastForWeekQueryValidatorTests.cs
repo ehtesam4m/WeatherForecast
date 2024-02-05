@@ -1,5 +1,6 @@
 ﻿using FluentValidation.TestHelper;
 using WeatherForecast.Application.Query.UseCases.GetForecastForWeek;
+using WeatherForecast.Domain.Common.Extensions;
 
 namespace WeatherForecast.Application.Tests.Query.UseCases.GetForecastForWeek
 {
@@ -15,7 +16,7 @@ namespace WeatherForecast.Application.Tests.Query.UseCases.GetForecastForWeek
         [Fact]
         public void WhenStartDateIsInThePast_Validator_ShouldHaveError()
         {
-            GetForecastForWeekQuery query = new GetForecastForWeekQuery(DateOnly.FromDateTime(DateTime.Now.AddDays(-1)));
+            GetForecastForWeekQuery query = new GetForecastForWeekQuery(DateHelper.Yesterday);
             var result = _validator.TestValidate(query);
             result.ShouldHaveValidationErrorFor(x => x.StartDate);
         }
