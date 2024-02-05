@@ -7,14 +7,17 @@ using WeatherForecast.Domain.Common;
 
 namespace WeatherForecast.Application.Command.UseCases.CreateForecast
 {
-    public class CreateForecastCommandHandler (IForecastRepository _repository, IUnitOfWork _unitOfWork) : IRequestHandler<CreateForecastCommand>
+    public class CreateForecastCommandHandler(IForecastRepository _repository, IUnitOfWork _unitOfWork) : IRequestHandler<CreateForecastCommand>
     {
         public async Task Handle(CreateForecastCommand request, CancellationToken cancellationToken)
         {
             if (await _repository.GetForecastByDate(request.Date) != null)
-                throw new EntityAlreadyExistsException("Forcast with this date already exists");
+                throw new EntityAlreadyExistsException("Forecast with this date already exists");
 
-            var forecast = new Forecast(new ForecastDate(request.Date), new ForecastTemperature(request.Temperature));
+            var forecastDate = new ForecastDate(request.Date);
+            var forecastTemperature = new ForecastTemperature(request.Temperature);
+            var forecast = new Forecast(forecastDate, forecastTemperature);
+            
             await _repository.CreateAsync(forecast, cancellationToken);
             await _unitOfWork.CompleteAsync();
         }
